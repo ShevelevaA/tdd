@@ -123,6 +123,133 @@ namespace test_tdd
         }
 
 
+        public bool ifNull(int i, int j)
+        {
+            if(matr[i][j] == 0)
+                return true;
+            else return false;
+        }
+
+        public void zashitaComp(Graphics gPanel)
+        {
+            // защита
+            if ((matr[0][0] + matr[0][1] + matr[0][2]) == 4 && matr[0][0] != 1 && matr[0][1] != 1 && matr[0][2] != 1)   //1-4-7  - защита
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (ifNull(0, j))
+                    {
+                        matr[0][j] = 1;
+                        hdpc = false;
+                        paintHodComp(gPanel);
+                    }
+                }
+            }
+            else
+            {
+                if ((matr[1][0] + matr[1][1] + matr[1][2]) == 4 && matr[1][0] != 1 && matr[1][1] != 1 && matr[1][2] != 1)   //2-5-8  - защита
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (ifNull(1,j))
+                        {
+                            matr[1][j] = 1;
+                            hdpc = false;
+                            paintHodComp(gPanel);
+                        }
+                    }
+                }
+                else
+                {
+                    if ((matr[2][0] + matr[2][1] + matr[2][2]) == 4 && matr[2][0] != 1 && matr[2][1] != 1 && matr[2][2] != 1)   //3-6-9  - защита
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if (ifNull(2,j))
+                            {
+                                matr[2][j] = 1;
+                                hdpc = false;
+                                paintHodComp(gPanel);
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if ((matr[0][0] + matr[1][0] + matr[2][0]) == 4 && matr[0][0] != 1 && matr[1][0] != 1 && matr[2][0] != 1)   //1-2-3  - защита
+                        {
+                            for (int i = 0; i < 3; i++)
+                            {
+                                if (ifNull(i, 0))
+                                {
+                                    matr[i][0] = 1;
+                                    hdpc = false;
+                                    paintHodComp(gPanel);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if ((matr[0][1] + matr[1][1] + matr[2][1]) == 4 && matr[0][1] != 1 && matr[1][1] != 1 && matr[2][1] != 1)   //4-5-6  - защита
+                            {
+                                for (int i = 0; i < 3; i++)
+                                {
+                                    if (ifNull(i, 1))
+                                    {
+                                        matr[i][1] = 1;
+                                        hdpc = false;
+                                        paintHodComp(gPanel);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if ((matr[0][2] + matr[1][2] + matr[2][2]) == 4 && matr[0][2] != 1 && matr[1][2] != 1 && matr[2][2] != 1)   //7-8-9  - защита
+                                {
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        if (ifNull(i, 2))
+                                        {
+                                            matr[i][2] = 1;
+                                            hdpc = false;
+                                            paintHodComp(gPanel);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if ((matr[0][0] + matr[1][1] + matr[2][2]) == 4 && matr[0][0] != 1 && matr[1][1] != 1 && matr[2][2] != 1)   //1-5-9  - защита
+                                    {
+                                        if (ifNull(0, 0))
+                                            matr[0][0] = 1;
+                                        if (ifNull(1, 1))
+                                            matr[1][1] = 1;
+                                        if (ifNull(2, 2))
+                                            matr[2][2] = 1;
+                                        hdpc = false;
+                                        paintHodComp(gPanel);
+                                    }
+                                    else
+                                    {
+                                        if ((matr[2][0] + matr[1][1] + matr[0][2]) == 4 && matr[2][0] != 1 && matr[1][1] != 1 && matr[0][2] != 1)   //3-5-7  - защита
+                                        {
+                                            if (ifNull(2, 0))
+                                                matr[2][0] = 1;
+                                            if (ifNull(1, 1))
+                                                matr[1][1] = 1;
+                                            if (ifNull(0, 2))
+                                                matr[0][2] = 1;
+                                            hdpc = false;
+                                            paintHodComp(gPanel);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }       //конец защиты по 2 правилу
+        }
 
 
     }
