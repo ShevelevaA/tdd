@@ -20,7 +20,9 @@ namespace test_tdd
 
         public void initMatr()
         {
-           
+            for (int i = 0; i < 3; i++)
+                
+                    matr[i][0] = 0;
         }
 
         public int[][] getMatr()
