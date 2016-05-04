@@ -33,8 +33,14 @@ namespace test_tdd
             return matr;
         }
 
-        public int getWhoFirst() {
+        public int getWhoFirst()
+        {
             return whoFirst;
+        }
+
+        public void setWhoFirst(int who)
+        {
+            whoFirst = who;
         }
     }
 }
