@@ -15,6 +15,10 @@ namespace test_tdd
         public bool hdpc;//true - сейчас ход компьютера, false - ход пользователя
         public bool pervhod;  //true говорит о том, что у компьютера нынче первый ход. первым ходом компьютер должен ходить в
         //центр, дальше по ситуации. значение false переправляет на путь "дальше по ситуации"
+        public int xfir = -1; // первый ход юзера
+        public int yfir = -1; // когда он играет крестиками
+        public int xlast = -1;//последний
+        public int ylast = -1;// ход юзера
 
         public Game()
         {
@@ -25,6 +29,10 @@ namespace test_tdd
             whoFirst = 2; // первый ходит пользователь
             hdpc = false;
             pervhod = true;
+            xfir = -1;
+            yfir = -1; 
+            xlast = -1;
+            ylast = -1;
         }
 
         public void initMatr()
@@ -249,6 +257,171 @@ namespace test_tdd
                     }
                 }
             }       //конец защиты по 2 правилу
+        }
+
+        public void krestiki(Graphics gPanel)   //противоположный ход
+        {
+            if (xlast == 0 && ylast == 0)  //если 0,0
+            {
+                if (ifNull(2, 2))
+                {
+                    matr[2][2] = 1;
+                    hdpc = false;
+                     paintHodComp(gPanel);
+                }
+                else
+                {
+                    randomHodComp(gPanel);
+                }
+            }
+            else
+            {
+                if (xlast == 2 && ylast == 0)   //2.0
+                {
+                    if (ifNull(0, 2))
+                    {
+                        matr[0][2] = 1;
+                        hdpc = false;
+                         paintHodComp(gPanel);
+                    }
+                    else
+                    {
+                        randomHodComp(gPanel);
+                    }
+                }
+                else
+                {
+                    if (xlast == 0 && ylast == 2)   //0.2
+                    {
+                        if (ifNull(2, 0))
+                        {
+                            matr[2][0] = 1;
+                            hdpc = false;
+                             paintHodComp(gPanel);
+                        }
+                        else
+                        {
+                            randomHodComp(gPanel);
+                        }
+                    }
+                    else
+                    {
+                        if (xlast == 2 && ylast == 2)   //2.2
+                        {
+                            if (ifNull(0, 0))
+                            {
+                                matr[0][0] = 1;
+                                hdpc = false;
+                                 paintHodComp(gPanel);
+                            }
+                            else
+                            {
+                                randomHodComp(gPanel);
+                            }
+                        }
+                        else
+                        {
+                            if (xlast == 0 && ylast == 1)   //0.1
+                            {
+                                if (ifNull(2, 0))
+                                {
+                                    matr[2][0] = 1;
+                                    hdpc = false;
+                                     paintHodComp(gPanel);
+                                }
+                                else
+                                {
+                                    if (ifNull(2, 2))
+                                    {
+                                        matr[2][2] = 1;
+                                        hdpc = false;
+                                         paintHodComp(gPanel);
+                                    }
+                                    else
+                                    {
+                                        randomHodComp(gPanel);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (xlast == 1 && ylast == 0)   //1.0
+                                {
+                                    if (ifNull(0, 2))
+                                    {
+                                        matr[0][2] = 1;
+                                        hdpc = false;
+                                         paintHodComp(gPanel);
+                                    }
+                                    else
+                                    {
+                                        if (ifNull(2,2))
+                                        {
+                                            matr[2][2] = 1;
+                                            hdpc = false;
+                                             paintHodComp(gPanel);
+                                        }
+                                        else
+                                        {
+                                            randomHodComp(gPanel);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (xlast == 2 && ylast == 1)   //2.1
+                                    {
+                                        if (ifNull(0,0))
+                                        {
+                                            matr[0][0] = 1;
+                                            hdpc = false;
+                                             paintHodComp(gPanel);
+                                        }
+                                        else
+                                        {
+                                            if (ifNull(0, 2))
+                                            {
+                                                matr[0][2] = 1;
+                                                hdpc = false;
+                                                 paintHodComp(gPanel);
+                                            }
+                                            else
+                                            {
+                                                randomHodComp(gPanel);
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (xlast == 1 && ylast == 2)   //1.2
+                                        {
+                                            if (ifNull(0, 0))
+                                            {
+                                                matr[0][0] = 1;
+                                                hdpc = false;
+                                                 paintHodComp(gPanel);
+                                            }
+                                            else
+                                            {
+                                                if (ifNull(2, 0))
+                                                {
+                                                    matr[2][0] = 1;
+                                                    hdpc = false;
+                                                     paintHodComp(gPanel);
+                                                }
+                                                else
+                                                {
+                                                    randomHodComp(gPanel);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
