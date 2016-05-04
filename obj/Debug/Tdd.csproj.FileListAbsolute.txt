@@ -1,9 +1,9 @@
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\bin\Debug\test_tdd.exe.config
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\bin\Debug\test_tdd.exe
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\bin\Debug\test_tdd.pdb
-C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.csprojResolveAssemblyReference.cache
+C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\Tdd.csprojResolveAssemblyReference.cache
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.Form1.resources
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.Properties.Resources.resources
-C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.csproj.GenerateResource.Cache
+C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\Tdd.csproj.GenerateResource.Cache
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.exe
 C:\Users\lena\Desktop\тестирование\test_tdd\test_tdd\obj\Debug\test_tdd.pdb
